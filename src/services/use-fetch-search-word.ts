@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
-import { API_TIMEOUT, API_URL } from "../utils/consts";
-import { APIErrorT, DictionaryAPIResponseI } from "../types";
+import { API_TIMEOUT, API_URL } from "@/utils/consts";
+import { APIErrorT, DictionaryAPIResponseI } from "@/types";
 
 export const useFetchSearchWord = () => {
   const [searchResult, setSearchResult] = useState<
-    DictionaryAPIResponseI[] | null
+    DictionaryAPIResponseI | null
   >(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState<APIErrorT | null>(null);
@@ -19,7 +19,7 @@ export const useFetchSearchWord = () => {
       });
       if (response.status === 200) {
         const result = response.data;
-        setSearchResult(result);
+        setSearchResult(result?.[0] ?? null);
       }
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {

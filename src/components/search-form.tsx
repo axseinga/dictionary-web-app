@@ -1,4 +1,4 @@
-import { IconSearch } from "./icons/icon-search";
+import { IconSearch } from "@/components/icons/icon-search";
 import { useState } from "react";
 
 type SearchFormProps = {
@@ -23,8 +23,8 @@ export const SearchForm = ({ fetchSearchWord }: SearchFormProps) => {
   };
 
   return (
-    <form className="w-full" onSubmit={handleSubmit}>
-      <div className="align-center flex h-16 w-full justify-between rounded-2xl bg-lightGrey3 pr-5">
+    <form className="mt-1 w-full" onSubmit={handleSubmit}>
+      <div className="align-center flex h-[64px] w-full justify-between rounded-2xl bg-lightGrey3 pr-5">
         <label htmlFor="search-input" className="sr-only">
           Search term
         </label>
@@ -32,7 +32,7 @@ export const SearchForm = ({ fetchSearchWord }: SearchFormProps) => {
           type="search"
           id="search-input"
           placeholder="Start typing..."
-          className="w-full rounded-2xl bg-lightGrey3 pl-5 text-xl font-bold text-darkGrey2"
+          className="w-full rounded-2xl bg-lightGrey3 pl-5 text-xl font-bold"
           value={inputValue}
           onChange={handleInputChange}
         />
