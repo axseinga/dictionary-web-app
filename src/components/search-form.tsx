@@ -35,12 +35,17 @@ export const SearchForm = ({ fetchSearchWord }: SearchFormProps) => {
           className="w-full rounded-2xl bg-lightGrey3 pl-5 text-xl font-bold"
           value={inputValue}
           onChange={handleInputChange}
+          aria-describedby="search-input-error"
         />
         <button className="pl-5" aria-label="Search">
           <IconSearch title="Search" />
         </button>
       </div>
-      <div aria-live="polite" className="mt-2 pl-1 text-customRed">
+      <div
+        aria-live="polite"
+        id="search-input-error"
+        className="mt-2 pl-1 text-customRed"
+      >
         {showEmptyError && <p>Whoops, can’t be empty…</p>}
       </div>
     </form>
