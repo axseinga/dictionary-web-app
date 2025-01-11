@@ -4,6 +4,7 @@ export interface DictionaryAPIResponseI {
   phonetics: PhoneticI[];
   origin: string;
   meanings: MeaningI[];
+  sourceUrls: string[];
 }
 
 export interface PhoneticI {
@@ -14,6 +15,8 @@ export interface PhoneticI {
 export interface MeaningI {
   partOfSpeech: string;
   definitions: DefinitionI[];
+  synonyms: string[];
+  antonyms: string[];
 }
 
 export interface DefinitionI {
