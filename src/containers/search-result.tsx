@@ -17,8 +17,6 @@ export const SearchResult = ({ result }: SearchResultProps) => {
     audioRef.current.play();
   };
 
-  console.log(result);
-
   return (
     <div className="mb-32">
       <div className="mt-11 flex justify-between">
