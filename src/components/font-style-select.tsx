@@ -69,7 +69,7 @@ export const FontStyleSelect = ({ items }: DropdownProps) => {
       <button
         type="button"
         ref={buttonRef}
-        className="text-body-m flex w-full items-center justify-center gap-3 rounded-full px-4 py-2 font-bold focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2"
+        className="flex w-full items-center justify-center gap-3 rounded-full px-4 py-2 text-body-m font-bold focus:outline-none focus:ring-2 focus:ring-purple-300 dark:focus:ring-customPurple"
         id="menu-button"
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -80,7 +80,7 @@ export const FontStyleSelect = ({ items }: DropdownProps) => {
       </button>
       {isOpen && (
         <div
-          className="shadow-soft-light absolute right-4 z-10 mt-3 w-48 rounded-2xl bg-white px-3 py-4 font-bold"
+          className="absolute right-4 z-10 mt-3 w-48 rounded-2xl bg-white px-3 py-4 font-bold shadow-soft-light dark:bg-darkGrey1 dark:shadow-soft-dark"
           role="menu"
           aria-labelledby="menu-button"
         >
@@ -88,9 +88,9 @@ export const FontStyleSelect = ({ items }: DropdownProps) => {
             <button
               key={item.label}
               ref={(el) => (itemRefs.current[index] = el)}
-              className={`text-body-m block w-full px-4 py-2 text-left ${
+              className={`block w-full px-4 py-2 text-left text-body-m ${
                 item === selectedItem && "underline"
-              } font-${item.style} hover:text-customPurple focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2`}
+              } font-${item.style} hover:text-customPurple focus:outline-none focus:ring-2 focus:ring-purple-300`}
               role="menuitem"
               tabIndex={isOpen ? 0 : -1}
               onClick={() => {

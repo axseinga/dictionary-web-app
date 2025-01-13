@@ -6,7 +6,7 @@ import { Navigation } from "./components/navigation";
 import { useAppState } from "./state/app-state";
 
 const App = () => {
-  const { fetchSearchWord, searchResult, isLoading, isError, setIsError } =
+  const { fetchSearchWord, resetSearchResult, searchResult, isLoading, isError, setIsError } =
     useFetchSearchWord();
   const fontStyle = useAppState((state) => state.fontStyle);
 
@@ -16,7 +16,7 @@ const App = () => {
     >
       <Navigation />
       <main>
-        <SearchForm fetchSearchWord={fetchSearchWord} setIsError={setIsError} />
+        <SearchForm fetchSearchWord={fetchSearchWord} setIsError={setIsError} resetSearchResult={resetSearchResult}/>
         <div>
           {searchResult && <SearchResult result={searchResult} />}
           {isError && <SearchResultErrors errorCode={isError} />}

@@ -30,7 +30,7 @@ export default {
       },
       boxShadow: {
         "soft-light": "0px 4px 20px rgba(0, 0, 0, 0.1)",
-        "soft-dark": "0px 4px 20px #a445ed7a",
+        "soft-dark": "0px 4px 20px #a445eded",
       },
     },
   },

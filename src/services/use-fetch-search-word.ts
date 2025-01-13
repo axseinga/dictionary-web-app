@@ -4,9 +4,8 @@ import { API_TIMEOUT, API_URL } from "@/utils/consts";
 import { APIErrorT, DictionaryAPIResponseI } from "@/types";
 
 export const useFetchSearchWord = () => {
-  const [searchResult, setSearchResult] = useState<
-    DictionaryAPIResponseI | null
-  >(null);
+  const [searchResult, setSearchResult] =
+    useState<DictionaryAPIResponseI | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState<APIErrorT | null>(null);
 
@@ -43,5 +42,16 @@ export const useFetchSearchWord = () => {
     }
   };
 
-  return { fetchSearchWord, searchResult, isLoading, isError, setIsError };
+  const resetSearchResult = () => {
+    setSearchResult(null);
+  };
+
+  return {
+    fetchSearchWord,
+    resetSearchResult,
+    searchResult,
+    isLoading,
+    isError,
+    setIsError,
+  };
 };
