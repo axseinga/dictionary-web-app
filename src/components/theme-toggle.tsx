@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconMoon } from "@/components/icons/icon-moon";
+import { useAppState } from "@/state/app-state";
 
 type ThemeToggleProps = {
   id: string;
@@ -7,6 +8,29 @@ type ThemeToggleProps = {
 
 export const ThemeToggle = ({ id }: ThemeToggleProps) => {
   const [isChecked, setIsChecked] = useState(false);
+
+  useEffect(() => {
+    const userPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    if (userPrefersDark) {
+      setIsChecked(true);
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+    const theme = isChecked ? "light" : "dark";
+
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    useAppState.getState().setTheme(theme);
+  };
 
   return (
     <div className="flex items-center gap-5">
@@ -19,7 +43,7 @@ export const ThemeToggle = ({ id }: ThemeToggleProps) => {
           type="checkbox"
           role="switch"
           checked={isChecked}
-          onChange={() => setIsChecked(!isChecked)}
+          onChange={handleChange}
           aria-checked={isChecked}
           aria-labelledby={`label-${id}`}
           className="peer sr-only"
