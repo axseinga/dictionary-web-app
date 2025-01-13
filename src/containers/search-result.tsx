@@ -19,9 +19,9 @@ export const SearchResult = ({ result }: SearchResultProps) => {
 
   return (
     <div className="mb-32">
-      <div className="mt-11 flex justify-between">
+      <div className="mt-5 flex justify-between sm:mt-11">
         <div className="flex flex-col gap-2">
-          <p className="text-heading-l font-bold tracking-[.15rem]">
+          <p className="sm:text-heading-lg text-heading-l font-bold tracking-[.09rem] sm:tracking-[.15rem]">
             {result.word}
           </p>
           <p className="text-heading-m font-light tracking-[.09rem] text-customPurple">
@@ -41,9 +41,9 @@ export const SearchResult = ({ result }: SearchResultProps) => {
           meaning={meaning}
         />
       ))}
-      <div className="flex flex-col gap-4 mt-10">
+      <div className="mt-10 flex flex-col gap-4">
         <hr />
-        <div className="text-body-s flex gap-5">
+        <div className="flex flex-col gap-1 text-body-s sm:flex-row sm:gap-5">
           <p>Source</p>
           <a
             href={result.sourceUrls?.[0] ?? "https://en.wiktionary.org/wiki/"}

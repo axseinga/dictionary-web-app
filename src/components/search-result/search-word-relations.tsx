@@ -7,8 +7,8 @@ export const SearchWordRelations = ({
 }: SearchWordRelationsProps) => {
   return (
     <div className="flex gap-6">
-      <p className="text-heading-s text-lightGrey1">Synonyms</p>
-      <ul className="flex flex-wrap gap-2 text-heading-s font-bold text-customPurple">
+      <p className="text-heading-xs sm:text-heading-s text-lightGrey1">Synonyms</p>
+      <ul className="flex flex-wrap gap-2 text-heading-xs sm:text-heading-s font-bold text-customPurple">
         {wordRelationArray.map((wordRelationItem, wordRelationItemIndex) => (
           <li
             key={`${wordRelationItemIndex}_${wordRelationItem}`}

@@ -40,7 +40,9 @@ export const SearchForm = ({
 
   return (
     <form className="mt-1 w-full" onSubmit={handleSubmit}>
-      <div className={`align-center flex h-[64px] w-full justify-between rounded-2xl bg-lightGrey3 dark:bg-darkGrey1 ${showEmptyError ? "ring-2 ring-customRed" : ""}`}>
+      <div
+        className={`align-center flex h-[46px] w-full justify-between rounded-2xl bg-lightGrey3 dark:bg-darkGrey1 sm:h-[64px] ${showEmptyError ? "ring-2 ring-customRed" : ""}`}
+      >
         <label htmlFor="search-input" className="sr-only">
           Search term
         </label>
@@ -48,7 +50,7 @@ export const SearchForm = ({
           type="search"
           id="search-input"
           placeholder="Start typing..."
-          className="w-full rounded-2xl bg-lightGrey3 pl-5 text-xl font-bold focus:outline-none focus:ring-2 focus:ring-customPurple dark:bg-darkGrey1"
+          className="w-full rounded-2xl bg-lightGrey3 pl-5 text-[1rem] font-bold focus:outline-none focus:ring-2 focus:ring-customPurple dark:bg-darkGrey1 sm:text-xl"
           value={inputValue}
           onChange={handleInputChange}
           aria-describedby="search-input-error"

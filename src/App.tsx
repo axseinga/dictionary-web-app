@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <div
-      className={`mx-auto flex w-full max-w-[46rem] flex-col bg-white tracking-[.035rem] text-darkGrey2 dark:bg-black dark:text-white font-${fontStyle}`}
+      className={`mx-auto flex w-full max-w-[46rem] flex-col bg-white tracking-[.035rem] text-darkGrey2 dark:bg-black dark:text-white font-${fontStyle} px-5 md:px-0`}
     >
       <Navigation />
       <main>

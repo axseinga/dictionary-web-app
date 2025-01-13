@@ -7,10 +7,8 @@ export const IconPlay = ({ title }: IconProps) => {
     <div className="group inline-block">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="75"
-        height="75"
         viewBox="0 0 75 75"
-        className="transition-all duration-300"
+        className="h-[45px] w-[45px] transition-all duration-300 md:h-[75px] md:w-[75px]"
       >
         {title && <title>{title}</title>}
         <circle
