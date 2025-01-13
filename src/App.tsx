@@ -4,22 +4,38 @@ import { SearchResultErrors } from "@/containers/search-result-errors";
 import { SearchResult } from "./containers/search-result";
 import { Navigation } from "./components/navigation";
 import { useAppState } from "./state/app-state";
+import { Loader } from "./components/loader";
 
 const App = () => {
-  const { fetchSearchWord, resetSearchResult, searchResult, isLoading, isError, setIsError } =
-    useFetchSearchWord();
+  const {
+    fetchSearchWord,
+    resetSearchResult,
+    searchResult,
+    isLoading,
+    isError,
+    setIsError,
+  } = useFetchSearchWord();
   const fontStyle = useAppState((state) => state.fontStyle);
 
   return (
     <div
-      className={`mx-auto flex w-full max-w-[46rem] flex-col tracking-[.035rem] text-darkGrey2 dark:text-white bg-white dark:bg-black font-${fontStyle}`}
+      className={`mx-auto flex w-full max-w-[46rem] flex-col bg-white tracking-[.035rem] text-darkGrey2 dark:bg-black dark:text-white font-${fontStyle}`}
     >
       <Navigation />
       <main>
-        <SearchForm fetchSearchWord={fetchSearchWord} setIsError={setIsError} resetSearchResult={resetSearchResult}/>
+        <SearchForm
+          fetchSearchWord={fetchSearchWord}
+          setIsError={setIsError}
+          resetSearchResult={resetSearchResult}
+        />
         <div>
-          {searchResult && <SearchResult result={searchResult} />}
-          {isError && <SearchResultErrors errorCode={isError} />}
+          {isLoading ? (
+            <Loader />
+          ) : isError ? (
+            <SearchResultErrors errorCode={isError} />
+          ) : (
+            searchResult && <SearchResult result={searchResult} />
+          )}
         </div>
       </main>
     </div>

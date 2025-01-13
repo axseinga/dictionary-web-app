@@ -49,7 +49,7 @@ export const SearchResult = ({ result }: SearchResultProps) => {
             href={result.sourceUrls?.[0] ?? "https://en.wiktionary.org/wiki/"}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 hover:underline"
           >
             <p>{result.sourceUrls?.[0] ?? ""}</p>
             <IconRedirect
