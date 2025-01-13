@@ -25,8 +25,12 @@ export default {
       },
       fontFamily: {
         inter: "Inter, sans-serif",
-        inconsolata: "Inconsolata, mono",
-        inter: "Lora, serif",
+        inco: "Inconsolata, monospace",
+        lora: "Lora, serif",
+      },
+      boxShadow: {
+        "soft-light": "0px 4px 20px rgba(0, 0, 0, 0.1)",
+        "soft-dark": "0px 4px 20px #a445ed7a",
       },
     },
   },

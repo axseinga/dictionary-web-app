@@ -43,5 +43,5 @@ export const useFetchSearchWord = () => {
     }
   };
 
-  return { fetchSearchWord, searchResult, isLoading, isError };
+  return { fetchSearchWord, searchResult, isLoading, isError, setIsError };
 };

@@ -27,3 +27,5 @@ export interface DefinitionI {
 }
 
 export type APIErrorT = 404 | 408 | 500;
+
+export type FontT = { label: string; style: string };

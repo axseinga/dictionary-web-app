@@ -1,11 +1,16 @@
 import { IconSearch } from "@/components/icons/icon-search";
-import { useState } from "react";
+import { APIErrorT } from "@/types";
+import { SetStateAction, useEffect, useState } from "react";
 
 type SearchFormProps = {
   fetchSearchWord: (param: string) => void;
+  setIsError: (value: SetStateAction<APIErrorT | null>) => void;
 };
 
-export const SearchForm = ({ fetchSearchWord }: SearchFormProps) => {
+export const SearchForm = ({
+  fetchSearchWord,
+  setIsError,
+}: SearchFormProps) => {
   const [inputValue, setInputValue] = useState("");
   const [showEmptyError, setShowEmptyError] = useState(false);
 
@@ -21,6 +26,14 @@ export const SearchForm = ({ fetchSearchWord }: SearchFormProps) => {
       fetchSearchWord(inputValue);
     }
   };
+
+  useEffect(() => {
+    if (inputValue !== "") {
+      setShowEmptyError(false);
+    } else {
+      setIsError(null);
+    }
+  }, [inputValue, setIsError]);
 
   return (
     <form className="mt-1 w-full" onSubmit={handleSubmit}>
