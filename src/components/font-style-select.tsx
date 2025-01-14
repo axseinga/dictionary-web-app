@@ -65,7 +65,7 @@ export const FontStyleSelect = ({ items }: DropdownProps) => {
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative border-r-[1px] border-l-lightGrey1 mr-2 sm:mr-0 sm:pr-6" ref={dropdownRef}>
       <button
         type="button"
         ref={buttonRef}
