@@ -21,7 +21,7 @@ export const ThemeToggle = ({ id }: ThemeToggleProps) => {
   }, []);
 
   const handleChange = () => {
-    setIsChecked(!isChecked);
+    setIsChecked((prev) => !prev);
     const theme = isChecked ? "light" : "dark";
 
     if (theme === "dark") {
