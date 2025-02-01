@@ -75,7 +75,7 @@ export const FontStyleSelect = ({ items }: DropdownProps) => {
         aria-haspopup="true"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <p>{selectedItem.label}</p>
+        {selectedItem.label}
         <IconArrowDown />
       </button>
       {isOpen && (

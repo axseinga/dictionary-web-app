@@ -6,7 +6,6 @@ import { AVAILABLE_FONTS } from "@/utils/consts";
 export const Navigation = () => {
   return (
     <nav
-      role="navigation"
       className="align-center flex w-full justify-between pb-5 pt-5 sm:pb-12 sm:pt-14"
     >
       <img src={Logo} alt="" />

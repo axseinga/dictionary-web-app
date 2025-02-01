@@ -49,7 +49,7 @@ export const ThemeToggle = ({ id }: ThemeToggleProps) => {
           className="peer sr-only"
           title="Toggle light/dark theme"
         />
-        <div className="peer relative h-5 w-10 rounded-full bg-lightGrey1 after:absolute after:bottom-[3px] after:left-[3px] after:top-[3px] after:h-[14px] after:w-[14px] after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-customPurple peer-checked:after:translate-x-[20px] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rtl:peer-checked:after:translate-x-[-20px]"></div>
+        <span className="peer relative h-5 w-10 rounded-full bg-lightGrey1 after:absolute after:bottom-[3px] after:left-[3px] after:top-[3px] after:h-[14px] after:w-[14px] after:rounded-full after:bg-white after:transition-all after:content-[''] peer-checked:bg-customPurple peer-checked:after:translate-x-[20px] peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-purple-300 rtl:peer-checked:after:translate-x-[-20px]"></span>
       </label>
       <IconMoon color={isChecked ? "#A445ED" : "#838383"} />
     </div>
